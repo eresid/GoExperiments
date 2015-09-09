@@ -1,0 +1,60 @@
+[0.1]
+
++ GitHub repo
+- Temp helper
+- Software helper
+    + Go version
+    - Java version
+    - Linux version
+- MD5 helper + experiments
+    + string support
+    - file support
+        https://github.com/mikemadden42/md5/blob/master/md5.go
+- File experiments
+- Exec helper + experiments
+- Random experiments
+- strings experiments
+    https://golang.org/src/strings/
+
+[0.2]
+
+- Arrays/Lists experiments
+- Collections
+- Threads experiments
+- Packages experiments
+- Logger helper
+- Hardware Helper
+    - RAM details
+    - CPU details
+    - OpenGL details
+    - Video details
+    - OS details
+
+[0.3]
+
+- Game Lottery
+- Database Experiments
+    - factory
+    - table
+- OOP
+- Android experiments
+    - Animals native module
+
+[0.4]
+
+- Game Tic-Tac
+- AI database structure
+- Crypto experiments
+    - Integrate facebook conceal
+- JSON create/parse
+
+[0.5]
+
+- WebP Converter
+- Input parameters experiments
+- XML create/parse
+
+[0.6]
+
+- HTTP server
+- Zip/Tar
