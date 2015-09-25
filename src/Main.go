@@ -39,8 +39,40 @@ func main() {
 	// f01fc92b23faa973f3492a23d5a705c5
 	// f01fc92b23faa973f3492a23d5a705c5
 	//testMd5()
-	testExec()
-	showVersion()
+	//testExec()
+	//showVersion()
+	testStruct()
+}
+
+type Person struct {
+	Name string
+	Address Address
+}
+
+type Address struct {
+	Number string
+	Street string
+	City   string
+	State  string
+	Zip    string
+}
+
+func (p *Person) Talk() {
+	fmt.Println("Hi, my name is", p.Name)
+}
+
+func (p *Person) Location() {
+	fmt.Println("Im at", p.Address.Number, p.Address.Street, p.Address.City, p.Address.State, p.Address.Zip)
+}
+
+func testStruct() {
+	p := Person{Name: "Steve"}
+	p.Address = Address{ Number: "13", Street: "Main" }
+	p.Address.City = "Gotham"
+	p.Address.State = "NY"
+	p.Address.Zip = "01313"
+	p.Talk()
+	p.Location()
 }
 
 func showVersion() {

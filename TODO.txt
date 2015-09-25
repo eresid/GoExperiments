@@ -15,6 +15,9 @@
 - Random experiments
 - strings experiments
     https://golang.org/src/strings/
+- Розібратись з ООП
+    - наслідування -> композиція
+    http://habrahabr.ru/post/225907/
 
 [0.2]
 
@@ -36,7 +39,6 @@
 - Database Experiments
     - factory
     - table
-- OOP
 - Android experiments
     - Animals native module
 
