@@ -6,9 +6,10 @@
     + Go version
     - Java version
     - Linux version
-- MD5 helper + experiments
-    + string support
-    - file support
+- MD5/SH1 helper + experiments
+    + MD5 string support
+    + SH1 string support
+    - MD5 file support
         https://github.com/mikemadden42/md5/blob/master/md5.go
 - File experiments
 - Exec helper + experiments
