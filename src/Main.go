@@ -16,6 +16,8 @@ import (
 	"os/exec"
 	"runtime"
 	"crypto/sha1"
+	"crypto/sha256"
+	"crypto/sha512"
 )
 
 // global
@@ -109,17 +111,65 @@ func testSH1() {
 	s := "Ukraine"
 	fmt.Println(s)
 
-	fmt.Println(getSh1(s))
+	fmt.Println(getSha1(s))
 
 	key := "f01fc92b23faa973f3492a23d5a705c5" + "918e862585716e5f6be3899347d4ae4c" + "23a9686dc6e4cd60";
-	fmt.Println(getSh1(key))
+	fmt.Println("sha1", getSha1(key))
+
+	fmt.Println("sha256", getSha256(key))
+
+	fmt.Println("sha512", getSha512(key))
 }
 
-func getSh1(value string) (string) {
+func getSha1(value string) (string) {
 	// The pattern for generating a hash is `sha1.New()`,
 	// `sha1.Write(bytes)`, then `sha1.Sum([]byte{})`.
 	// Here we start with a new hash.
 	h := sha1.New()
+
+	// `Write` expects bytes. If you have a string `s`,
+	// use `[]byte(s)` to coerce it to bytes.
+	h.Write([]byte(value))
+
+	// This gets the finalized hash result as a byte
+	// slice. The argument to `Sum` can be used to append
+	// to an existing byte slice: it usually isn't needed.
+	bs := h.Sum(nil)
+
+	// SHA1 values are often printed in hex, for example
+	// in git commits. Use the `%x` format verb to convert
+	// a hash results to a hex string.
+	// fmt.Printf("%x\n", bs)
+	return hex.EncodeToString(bs);
+}
+
+func getSha256(value string) (string) {
+	// The pattern for generating a hash is `sha1.New()`,
+	// `sha1.Write(bytes)`, then `sha1.Sum([]byte{})`.
+	// Here we start with a new hash.
+	h := sha256.New()
+
+	// `Write` expects bytes. If you have a string `s`,
+	// use `[]byte(s)` to coerce it to bytes.
+	h.Write([]byte(value))
+
+	// This gets the finalized hash result as a byte
+	// slice. The argument to `Sum` can be used to append
+	// to an existing byte slice: it usually isn't needed.
+	bs := h.Sum(nil)
+
+	// SHA1 values are often printed in hex, for example
+	// in git commits. Use the `%x` format verb to convert
+	// a hash results to a hex string.
+	// fmt.Printf("%x\n", bs)
+	return hex.EncodeToString(bs);
+}
+
+func getSha512(value string) (string) {
+	// The pattern for generating a hash is `sha1.New()`,
+	// `sha1.Write(bytes)`, then `sha1.Sum([]byte{})`.
+	// Here we start with a new hash.
+	h := sha512.New()
 
 	// `Write` expects bytes. If you have a string `s`,
 	// use `[]byte(s)` to coerce it to bytes.
