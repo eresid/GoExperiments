@@ -7,6 +7,8 @@ import (
 
 // https://codility.com/
 func main() {
+	speedKmToMeters();
+
 	elements := []int{3, 1, 2, 4, 3}
 
 	fmt.Println("len = ", len(elements))
@@ -61,6 +63,14 @@ func abs(x int) int {
 	return x
 }
 
-func sumNat() {
+func speedKmToMeters() {
+	// 12 km/h -> 5 min
+	// 17 = 3.5
 
+	var speed float64
+	_, _ = fmt.Scanf("%f", &speed)
+
+	result := 60 / speed
+
+	fmt.Println("minutes =", result)
 }
